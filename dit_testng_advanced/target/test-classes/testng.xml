@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="Learning TestNG XML">
+        <classes>
+            <class name="uk.axone.testngadvanced.TestHowAssertionWorks">
+                <methods>
+                    <include name="testAssertEquals"/>
+                    <include name="testAssertTrue"/>
+                    <include name="testAssertFalse"/>
+                </methods>
+            </class>
+            <class name="uk.axone.testngadvanced.TestHowSoftAssertWorks">
+                <methods>
+                    <include name="testSoftAssert"/>
+                </methods>
+            </class>
+            <class name="uk.axone.testngadvanced.TestHowToSkipTests">
+                <methods>
+                    <include name="doLoginTest"/>
+                    <include name="logoutTest"/>
+                    <include name="verifyHomePageTest"/>
+                    <include name="landingPageTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
