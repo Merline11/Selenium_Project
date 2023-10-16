@@ -1,0 +1,35 @@
+Reference Link:
+https://www.selenium.dev/documentation/legacy/selenium_3/grid_setup
+https://medium.com/maestral-solutions/selenium-grid-setup-the-complete-guide-cf000a2be50f
+https://www.selenium.dev/documentation/legacy/desired_capabilities/
+
+Configuring the Hub
+1. Download the selenium-server-standalone-3.141.59.jar
+2. Open the command prompt or terminal
+3. Navigate to the directory where selenium-server-standalone-3.141.59.jar exists
+    cd D:\Merline\Software\grid
+
+Step 1: Start the Hub(in command prompt)
+    java -jar selenium-server-standalone-3.141.59.jar -role hub
+
+    Tip 1: Verify the Hub status
+         http://localhost:4444
+
+    Tip 2: Stop the Hub
+         Ctrl+c in commamnd prompt
+
+    Tip 3: Start the Hub in different port
+         java -jar selenium-server-standalone-3.141.59.jar -role hub -port 3000
+
+Step 2: Start the Node(in another command prompt)
+    java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444(change the ip address which is mention in hub command prompt as "Nodes should be registered to")
+    java -jar selenium-server-standalone-3.141.59.jar -role node -hub  http://192.168.1.100:4444/grid/register/
+
+    Tip 4: Start the Node in different port
+         java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444 -port 5001
+
+Step 3: Start the Node with browser details
+eg: java -Dwebdriver.chrome.driver="D:\Merline\Software\driver\chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://192.168.1.100:4444/grid/register/
+-browser browserName=firefox,maxInstance=2 -browser browserName=chrome,maxInstance=3,platform=WIN10 -port 6000
+
+java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444 -port 5001 -browser browserName=chrome,version=115.0.5790.114,maxInstance=3

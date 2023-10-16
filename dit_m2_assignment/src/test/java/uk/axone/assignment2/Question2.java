@@ -1,0 +1,6 @@
+package uk.axone.assignment2;
+
+public class Question2 {
+
+
+}

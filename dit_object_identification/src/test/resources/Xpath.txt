@@ -1,0 +1,127 @@
+Xpath - XML Path
+- Address of a WebElement
+- alternative mechanism or locator strategy
+- use when no id, name, class, etc. attributes values
+
+Types of Xpath
+1. Absolute or Complete Xpath(traversing from the root tag to the inspecting element)
+
+/ -> represents look for the tag immediately present
+
+a/img --> a (parent) img (child)
+
+siblings -> name / number of the siblings
+
+<head>
+   <body>
+    <div id ="page">
+        <div class="header-container">
+            <header id="header">
+               <div class="banner"> (all div are at same level called siblings) siblings->name/number the siblings
+               <div class="nav">
+               <div class ="title">
+                    <div class="container">
+                     <div class="row">
+                        <div id="header_logo">
+                            <a>
+                                <img>
+html/body/div/div/header/div[3]/div/div/div/a/img
+
+Advantage :
+1. accurate
+2. fast
+
+Disadvantage :
+1. Flaky/ brittle(poor maintenance for further development)
+
+2. Relative or Partial Xpath
+
+1.TagName,attribute,value trio
+Syntax://tagName[@attribute='value']
+eg:
+1. //img[@class='logo img-responsive']
+2. //img[@src='http://selenium/logo.ipg']
+
+2. How to handle Xpath dynamically(in case no attributes or minimal attributes available)
+
+Use the text value that appears in webpage
+Syntax://tagName[text()='value of the text that appears']
+
+eg://h1[text()='A unique powerful text']
+
+3. Using the wild card search
+Syntax://tagName[contains(@attribute,'value containing the text')]
+
+eg:
+1.//button[contains(@class='success')]
+2.//button[contains(@class='danger')]
+
+4. Using starts-with
+Syntax://tagName[starts-with(@attribute,'starting value')]
+
+eg:
+1.//button[starts-with(@id='button1')]
+2.//button[starts-with(@id='button2')]
+
+5. Can one element have multiple Xpath? Yes
+
+Same element we can //input[@id='FirstName'] and //input[@name='FirstName']
+
+6. Logical and Operator
+[Interrogation of two element/two condition]-> end is resultset
+
+Syntax: //tagName[stmt1 and stmt2]
+stmt1 ://input[@class='form-control']
+stmt2 ://input[@id='user-message']
+//input[@class='form-control' and @id='user-message']
+
+and is case-sensitive and Don't use AND
+
+stmt1               stmt2
+Condition A         Condition B         Result
+False               False               False[No Element]
+True                False               False[No Element]
+False               True                False[No Element]
+True                True                True[Returns both]
+
+7. Logical or Operator
+Syntax: //tagName[stmt1 or stmt2]
+stmt1 ://input[@class='form-control']
+stmt2 ://input[@id='user-message']
+//input[@class='form-control' or @id='user-message']
+
+stmt1               stmt2
+Condition A         Condition B         Result
+False               False               False[No Element]
+True                False               True[Return A]
+False               True                True[Return B]
+True                True                True[Returns both]
+
+How XPath engine works?
+//input -> find all input tags from the file
+
+8. Chained declarations(chaining multiple relative xpath)
+//input[@class='form-control']//input[@id='user-message']
+
+9. Following siblings
+
+<form id="gettotal">
+    <input id="sum1"/>
+    <input id="sum2"/>
+
+TO GET BOTH INPUT TAGS
+----------------------
+//form[@id='gettotal']//input
+
+another way 1:
+//form[@id='gettotal']//following::input  (::-> matches input tag available)
+
+another way 2:
+//form[@id='gettotal']//following-sibling::input
+
+Common Exceptions in Xpath:
+---------------------------
+1. NoSuchElementException - spelling mistakes or it could not find the element with the given specifications
+2. InvalidSelectorException - syntax errors
+3. InvalidElementStateException - trying to type on disabled textbox
+

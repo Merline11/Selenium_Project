@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>uk.axone</groupId>
-    <artifactId>dit_selenium_advanced</artifactId>
+    <artifactId>dit_hybrid_framework</artifactId>
     <version>1.0-SNAPSHOT</version>
+
 
     <properties>
         <testng.version>7.8.0</testng.version>
@@ -14,6 +15,9 @@
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <javacompiler.version>11</javacompiler.version>
         <htmlunit3-driver.version>4.10.0</htmlunit3-driver.version>
+        <ashot.version>1.5.4</ashot.version>
+        <log4j.version>2.20.0</log4j.version>
+        <extentreports.version>2.41.2</extentreports.version>
     </properties>
 
     <dependencies>
@@ -34,6 +38,26 @@
             <artifactId>htmlunit3-driver</artifactId>
             <version>${htmlunit3-driver.version}</version>
         </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>${ashot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.relevantcodes</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extentreports.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
@@ -50,6 +74,5 @@
             </plugins>
         </pluginManagement>
     </build>
-
 
 </project>

@@ -1,0 +1,77 @@
+CSS - Cascading Style Sheets
+- Acts as a skin
+- Fonts, layouts, size, color, etc
+
+Basic Syntax:
+1. How to identify ID attribute in CSS
+Syntax : #idvalue
+eg:
+    ##sum1
+
+2. How to identify class attribute in CSS
+Syntax : .class-value
+eg:
+    .logo.img-responsive  (class="logo img-responsive")
+    .form-group           (class="form-group")
+
+3.Rule for CSS Selector Syntax compared to Xpath Syntax
+i) No @ symbol is used
+ii) No '//' is used
+iii) '/' replaced with '>' or 'whitespace'
+
+4. Absolute CSS
+XPath(Absolute)                                             Absolute CSS
+html/body/div/div/header/div[3]/div/div/div/a/img   --> html body div div header div:nth-child(3) div div div a img
+
+5. TagName,attribute,value trio
+   Syntax:tagName[attribute='value']
+   eg:
+   1. img[class='logo img-responsive']
+   2. img[src='http://selenium/logo.ipg']
+   3. input[id='user-message']
+
+6. Using wild card search - using contains
+Syntax : tagName[attribute*='value containing the text']
+   eg:
+   1. button[class*='success']
+   2. button[class*='danger']
+
+7. Using starts-with
+Syntax : tagName[attribute^='starting value of the text']
+
+eg:
+1. input[id^='user')]
+
+8. Using ends-with
+Syntax : tagName[attribute$='ending value of the text']
+
+eg:
+1. input[id$='message')]
+
+9. How to find node of ul in li(first-of-type)
+<ul id="treemenu">
+    <li class="tree-branch">
+        <ul>
+           <li class="tree-branch">
+            <ul>
+                <li>
+                <li>
+                <li>
+
+Syntax: tagName:first-of-type
+eg: .tree-branch>ul>li:first-of-type
+
+10. to identify last-of-type
+
+Syntax: tagName:last-of-type
+eg: .tree-branch>ul>li:last-of-type
+
+10. to identify second/third node
+
+Syntax: tagName:nth-of-type
+eg: .tree-branch>ul>li:nth-of-type(2)
+.tree-branch>ul>li:nth-of-type(5)
+
+
+
+

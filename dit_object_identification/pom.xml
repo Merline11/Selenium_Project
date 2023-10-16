@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>uk.axone</groupId>
-    <artifactId>dit_selenium_advanced</artifactId>
+    <groupId>uk.axone.objectidentification</groupId>
+    <artifactId>dit_object_identification</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -14,6 +14,7 @@
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <javacompiler.version>11</javacompiler.version>
         <htmlunit3-driver.version>4.10.0</htmlunit3-driver.version>
+        <ashot.version>1.5.4</ashot.version>
     </properties>
 
     <dependencies>
@@ -34,6 +35,11 @@
             <artifactId>htmlunit3-driver</artifactId>
             <version>${htmlunit3-driver.version}</version>
         </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>${ashot.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
@@ -50,6 +56,5 @@
             </plugins>
         </pluginManagement>
     </build>
-
 
 </project>

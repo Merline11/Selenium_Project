@@ -1,0 +1,15 @@
+19 Jul 2023 20:43:17,488 DEBUG      [axone.logging.TestHowLoggingWorks] Hello World! This is a DEBUG message 
+19 Jul 2023 20:43:17,501 INFO       [axone.logging.TestHowLoggingWorks] Hello World! This is an INFO message 
+19 Jul 2023 20:43:17,501 WARN       [axone.logging.TestHowLoggingWorks] Hello World! This is a WARNING message 
+19 Jul 2023 20:43:17,501 ERROR      [axone.logging.TestHowLoggingWorks] Hello World! This is an ERROR message 
+19 Jul 2023 20:43:17,501 FATAL      [axone.logging.TestHowLoggingWorks] Hello World! This is a FATAL message 
+19 Jul 2023 20:44:49,052 DEBUG      [axone.logging.TestHowLoggingWorks] Hello World! This is a DEBUG message 
+19 Jul 2023 20:44:49,058 INFO       [axone.logging.TestHowLoggingWorks] Hello World! This is an INFO message 
+19 Jul 2023 20:44:49,059 WARN       [axone.logging.TestHowLoggingWorks] Hello World! This is a WARNING message 
+19 Jul 2023 20:44:49,059 ERROR      [axone.logging.TestHowLoggingWorks] Hello World! This is an ERROR message 
+19 Jul 2023 20:44:49,061 FATAL      [axone.logging.TestHowLoggingWorks] Hello World! This is a FATAL message 
+19 Jul 2023 20:45:05,746 DEBUG      [axone.logging.TestHowLoggingWorks] Hello World! This is a DEBUG message 
+19 Jul 2023 20:45:05,753 INFO       [axone.logging.TestHowLoggingWorks] Hello World! This is an INFO message 
+19 Jul 2023 20:45:05,753 WARN       [axone.logging.TestHowLoggingWorks] Hello World! This is a WARNING message 
+19 Jul 2023 20:45:05,753 ERROR      [axone.logging.TestHowLoggingWorks] Hello World! This is an ERROR message 
+19 Jul 2023 20:45:05,753 FATAL      [axone.logging.TestHowLoggingWorks] Hello World! This is a FATAL message 

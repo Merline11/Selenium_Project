@@ -6,7 +6,8 @@ import org.testng.annotations.Test;
 /**
  * @author Karthik.Gandhinathan
  */
-public class TestSimpleBrowserLaunch {
+public class
+TestSimpleBrowserLaunch {
 
     @Test
     public void testSelenium(){

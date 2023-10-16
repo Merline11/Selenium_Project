@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="logPath">./logs</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="MainLogFile"
+                     filename="${logPath}/logTutorial.log"
+                     filePattern="${logPath}/logTutorial.log-%d{yyyy-MM-dd}-%i" append="true">
+            <PatternLayout pattern="%d{DATE} %-10p [%c{-1}] %m %n" />
+            <!--            <PatternLayout pattern="%highlight{%d [%t] %-5level: %msg%n%throwable}" />-->
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="200 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="30"
+                                     fileIndex="min" />
+        </RollingFile>
+
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--            <PatternLayout pattern="%d{DATE} [%t] %-3level %logger{36} - %msg%n" />-->
+            <PatternLayout pattern="%highlight{%d [%t] %-5level: %msg%n%throwable}{FATAL=white, ERROR=red, WARN=bright_blue, INFO=cyan, DEBUG=bright_green, TRACE=blue}" />
+        </Console>
+
+    </Appenders>
+    <Loggers>
+        <Logger name="uk.axone" level="debug" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="MainLogFile" />
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
