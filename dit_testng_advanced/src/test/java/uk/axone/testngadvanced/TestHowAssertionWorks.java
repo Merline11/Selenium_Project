@@ -31,7 +31,7 @@ public class TestHowAssertionWorks {
 
     @Test
     public void testAssertTrue(){
-        Assert.assertTrue(7 < 5, "Condition has evaluated to FALSE");
+        Assert.assertTrue(7 > 5, "Condition has evaluated to FALSE");
     }
 
 
